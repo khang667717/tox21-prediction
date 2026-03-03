@@ -1,5 +1,5 @@
 # ==================================================
-# 1. Environment / Virtual Environment
+# 1️⃣ Environment / Virtual Environment
 # ==================================================
 tox21_env/
 .env
@@ -10,7 +10,7 @@ ENV/
 *.bak/
 
 # ==================================================
-# 2. Python Cache / Compiled
+# 2️⃣ Python Cache / Compiled Files
 # ==================================================
 __pycache__/
 *.py[cod]
@@ -19,17 +19,17 @@ __pycache__/
 *.pyd
 
 # ==================================================
-# 3. Logs
+# 3️⃣ Logs
 # ==================================================
 *.log
 
 # ==================================================
-# 4. Jupyter
+# 4️⃣ Jupyter
 # ==================================================
 .ipynb_checkpoints/
 
 # ==================================================
-# 5. OS Files
+# 5️⃣ OS Files
 # ==================================================
 .DS_Store
 Thumbs.db
@@ -41,7 +41,7 @@ Icon
 .Trashes
 
 # ==================================================
-# 6. IDE / Editor
+# 6️⃣ IDE / Editor
 # ==================================================
 .vscode/
 .idea/
@@ -50,8 +50,18 @@ Icon
 *~
 
 # ==================================================
-# 7. Training Checkpoints (giữ baseline model)
+# 7️⃣ Training Checkpoints (giữ baseline model)
 # ==================================================
 models/**/best_model_checkpoint.pt
 models/**/final_model.pt
 
+# ==================================================
+# 8️⃣ Optional: Large temporary experiment outputs
+# (Chỉ ignore ảnh, không ignore CSV report)
+# ==================================================
+results/**/*.png
+results/**/*.jpg
+results/**/*.jpeg
+results/**/*.pdf
+
+calibration_results/**/*.png
