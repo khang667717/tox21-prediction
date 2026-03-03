@@ -1,5 +1,5 @@
 # ==================================================
-# 1️⃣ Environment / Virtual Environment
+# 1️⃣ ENVIRONMENT
 # ==================================================
 tox21_env/
 .env
@@ -7,41 +7,27 @@ tox21_env/
 env/
 venv/
 ENV/
-*.bak/
 
 # ==================================================
-# 2️⃣ Python Cache / Compiled Files
+# 2️⃣ PYTHON CACHE / COMPILED
 # ==================================================
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
 *.pyd
 
 # ==================================================
-# 3️⃣ Logs
+# 3️⃣ LOGS
 # ==================================================
 *.log
 
 # ==================================================
-# 4️⃣ Jupyter
+# 4️⃣ JUPYTER
 # ==================================================
 .ipynb_checkpoints/
 
 # ==================================================
-# 5️⃣ OS Files
-# ==================================================
-.DS_Store
-Thumbs.db
-.AppleDouble
-.LSOverride
-Icon
-._*
-.Spotlight-V100
-.Trashes
-
-# ==================================================
-# 6️⃣ IDE / Editor
+# 5️⃣ IDE / EDITOR
 # ==================================================
 .vscode/
 .idea/
@@ -50,14 +36,55 @@ Icon
 *~
 
 # ==================================================
-# 7️⃣ Training Checkpoints (giữ baseline model)
+# 6️⃣ OS FILES
 # ==================================================
-models/**/best_model_checkpoint.pt
-models/**/final_model.pt
+.DS_Store
+Thumbs.db
 
 # ==================================================
-# 8️⃣ Optional: Large temporary experiment outputs
-# (Chỉ ignore ảnh, không ignore CSV report)
+# 7️⃣ BUILD / DIST
+# ==================================================
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+
+# ==================================================
+# 8️⃣ RAW DATA (nếu không muốn upload toàn bộ dataset)
+# ==================================================
+data/raw/
+
+# ==================================================
+# 9️⃣ PROCESSED DATA
+# (Giữ manifest để reproducibility)
+# ==================================================
+data/processed/*.csv
+data/processed/*.npy
+data/processed/*.json
+!data/processed/tasks.json
+!data/processed/split_manifest.json
+
+# ==================================================
+# 🔟 MODELS
+# Ignore tất cả model nặng
+# ==================================================
+models/**/*.pt
+models/**/*.pth
+models/**/*.pkl
+models/**/*.joblib
+models/**/*.h5
+models/**/*.onnx
+
+# 👉 MỞ LẠI folder baseline
+!models/baseline/
+
+# 👉 Giữ toàn bộ 12 baseline models
+!models/baseline/*.joblib
+
+# ==================================================
+# 1️⃣1️⃣ RESULTS
+# Ignore ảnh và file lớn
 # ==================================================
 results/**/*.png
 results/**/*.jpg
