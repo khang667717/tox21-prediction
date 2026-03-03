@@ -1,0 +1,34 @@
+[
+  {
+    "Model":"XGBoost (ECFP4)",
+    "Type":"Baseline",
+    "Macro PR-AUC":0.3507656743,
+    "Macro ROC-AUC":0.7057914647,
+    "Micro PR-AUC":0.3557045009,
+    "Micro ROC-AUC":0.7614687595
+  },
+  {
+    "Model":"Descriptor MLP",
+    "Type":"Neural Network",
+    "Macro PR-AUC":0.3269534732,
+    "Macro ROC-AUC":0.7433814904,
+    "Micro PR-AUC":0.3227388633,
+    "Micro ROC-AUC":0.7831764214
+  },
+  {
+    "Model":"GNN (GNN_GCN)",
+    "Type":"GNN",
+    "Macro PR-AUC":0.3146485488,
+    "Macro ROC-AUC":0.7400650432,
+    "Micro PR-AUC":0.3206409166,
+    "Micro ROC-AUC":0.778396079
+  },
+  {
+    "Model":"GNN (GNN_GAT)",
+    "Type":"GNN",
+    "Macro PR-AUC":0.3159181086,
+    "Macro ROC-AUC":0.7514995736,
+    "Micro PR-AUC":0.3285119526,
+    "Micro ROC-AUC":0.7873432698
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "Model": "XGBoost (ECFP4)",
+  "Type": "Baseline",
+  "Macro PR-AUC": 0.35076567430945577,
+  "Macro ROC-AUC": 0.705791464715475,
+  "Micro PR-AUC": 0.3557045008816602,
+  "Micro ROC-AUC": 0.7614687595392253
+}
