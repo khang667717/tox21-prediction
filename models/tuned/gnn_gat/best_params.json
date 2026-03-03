@@ -1,0 +1,9 @@
+{
+  "hidden_dim": 216,
+  "num_layers": 4,
+  "dropout_rate": 0.1007452671264261,
+  "learning_rate": 0.000816616137374428,
+  "batch_size": 32,
+  "weight_decay": 0.0002448850903878357,
+  "pooling": "max"
+}

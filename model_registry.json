@@ -1,0 +1,41 @@
+{
+  "baseline_xgboost": {
+    "type": "baseline",
+    "model_dir": "models/baseline",
+    "priority": 3,
+    "tunable": true,
+    "requires_gpu": false,
+    "supports_calibration": false,
+    "notes": "ECFP4 + XGBoost baseline"
+  },
+
+  "descriptor_mlp": {
+    "type": "mlp",
+    "model_dir": "models/descriptor_mlp",
+    "priority": 2,
+    "tunable": true,
+    "requires_gpu": true,
+    "supports_calibration": true,
+    "notes": "MLP on RDKit descriptors"
+  },
+
+  "gnn_gcn": {
+    "type": "gnn",
+    "model_dir": "models/gnn_gcn",
+    "priority": 1,
+    "tunable": true,
+    "requires_gpu": true,
+    "supports_calibration": true,
+    "notes": "Graph Convolutional Network"
+  },
+
+  "gnn_gat": {
+    "type": "gnn",
+    "model_dir": "models/gnn_gat",
+    "priority": 1,
+    "tunable": true,
+    "requires_gpu": true,
+    "supports_calibration": true,
+    "notes": "Graph Attention Network"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "selected_model": "xgboost_model.pkl",
+  "model_name": "XGBoost (ECFP4)",
+  "model_path": "models/baseline/xgboost_task_7.joblib",
+  "macro_pr_auc": 0.3507656743094557,
+  "macro_roc_auc": 0.705791464715475,
+  "brier": 0.10252606866439815,
+  "priority": 99,
+  "selection_timestamp": "2026-02-13T17:12:52.575406",
+  "candidates_considered": 4,
+  "tolerance_margin": 0.01,
+  "selection_rules": [
+    "Highest Macro PR-AUC",
+    "Lowest Brier score",
+    "Registry priority"
+  ],
+  "all_candidates": [
+    {
+      "Model": "XGBoost (ECFP4)",
+      "Type": "Baseline",
+      "Macro PR-AUC": 0.3507656743094557,
+      "Macro ROC-AUC": 0.705791464715475,
+      "Micro PR-AUC": 0.3557045008816602,
+      "Micro ROC-AUC": 0.7614687595392253,
+      "Brier": 0.10252606866439815,
+      "Priority": 99
+    },
+    {
+      "Model": "Descriptor MLP",
+      "Type": "Neural Network",
+      "Macro PR-AUC": 0.3269534732306374,
+      "Macro ROC-AUC": 0.7433814903781023,
+      "Micro PR-AUC": 0.3227388632603355,
+      "Micro ROC-AUC": 0.7831764214449817,
+      "Brier": 0.1463617708090632,
+      "Priority": 99
+    },
+    {
+      "Model": "GNN (GNN_GAT)",
+      "Type": "GNN",
+      "Macro PR-AUC": 0.3159181085914986,
+      "Macro ROC-AUC": 0.7514995735966657,
+      "Micro PR-AUC": 0.3285119525605681,
+      "Micro ROC-AUC": 0.7873432698111779,
+      "Brier": 0.15974889044927312,
+      "Priority": 1
+    },
+    {
+      "Model": "GNN (GNN_GCN)",
+      "Type": "GNN",
+      "Macro PR-AUC": 0.3146485488305515,
+      "Macro ROC-AUC": 0.740065043191481,
+      "Micro PR-AUC": 0.3206409165887076,
+      "Micro ROC-AUC": 0.7783960789624078,
+      "Brier": 0.15378403513199304,
+      "Priority": 1
+    }
+  ]
+}

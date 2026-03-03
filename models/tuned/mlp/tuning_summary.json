@@ -1,0 +1,14 @@
+{
+  "best_value": 0.4360861233767528,
+  "best_params": {
+    "n_layers": 2,
+    "hidden_dim_0": 444,
+    "hidden_dim_1": 406,
+    "dropout_rate": 0.31612726894390175,
+    "learning_rate": 0.00010889540027950332,
+    "batch_size": 32,
+    "weight_decay": 0.00012197497800699738
+  },
+  "model_type": "mlp",
+  "trial_count": 40
+}

@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+venv/
+tox21_env/
+env/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Data
+data/raw/
+data/processed/*.csv
+data/processed/*.npy
+data/processed/*.json
+!data/processed/tasks.json
+*.db
+*.sqlite
+*.sqlite3
+
+# Models
+models/**/*.pt
+models/**/*.pkl
+models/**/*.joblib
+!models/baseline/xgboost_task_0.joblib
+models/**/final_model.pt
+models/**/best_model_checkpoint.pt
+
+# Results
+demo_results/
+results/
+calibration_results/
+final_evaluation/
+interpretability/
+__pycache__/
+*.log
+*.aux
+*.out
+*.toc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/

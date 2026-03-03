@@ -1,0 +1,79 @@
+--- scripts/feature_extraction.py.orig	2024-02-11 14:00:00
++++ scripts/feature_extraction.py	2024-02-11 14:00:01
+@@ -1,5 +1,6 @@
+ import numpy as np
+ from rdkit import Chem
++from typing import List
+ 
+ def extract_morgan_fingerprint(smiles: str, radius: int = 2, n_bits: int = 2048) -> np.ndarray:
+     """Extract Morgan fingerprint (ECFP)."""
+@@ -59,3 +60,75 @@
+         'edge_index': edge_indices.T,
+         'edge_attr': edge_features
+     }
++
++def atom_to_feature(atom) -> List[float]:
++    """Convert RDKit atom to feature vector (SAME as in gnn_model.py)."""
++    from rdkit import Chem
++    
++    features = []
++    
++    # Atomic number (one-hot for common elements)
++    atomic_num = atom.GetAtomicNum()
++    common_atoms = [6, 7, 8, 9, 15, 16, 17, 35, 53]  # C, N, O, F, P, S, Cl, Br, I
++    for elem in common_atoms:
++        features.append(1.0 if atomic_num == elem else 0.0)
++    features.append(1.0 if atomic_num not in common_atoms else 0.0)  # Other
++    
++    # Degree
++    degree = atom.GetDegree()
++    for d in range(6):  # 0-5
++        features.append(1.0 if degree == d else 0.0)
++    features.append(1.0 if degree > 5 else 0.0)  # >5
++    
++    # Formal charge
++    features.append(float(atom.GetFormalCharge()))
++    
++    # Radical electrons
++    features.append(float(atom.GetNumRadicalElectrons()))
++    
++    # Hybridization
++    hybridization = atom.GetHybridization()
++    hybrid_types = [
++        Chem.rdchem.HybridizationType.SP,
++        Chem.rdchem.HybridizationType.SP2,
++        Chem.rdchem.HybridizationType.SP3,
++        Chem.rdchem.HybridizationType.SP3D,
++        Chem.rdchem.HybridizationType.SP3D2
++    ]
++    for ht in hybrid_types:
++        features.append(1.0 if hybridization == ht else 0.0)
++    features.append(1.0 if hybridization not in hybrid_types else 0.0)
++    
++    # Aromatic
++    features.append(float(atom.GetIsAromatic()))
++    
++    # Ring information
++    features.append(float(atom.IsInRing()))
++    features.append(float(atom.IsInRingSize(3)))
++    features.append(float(atom.IsInRingSize(4)))
++    features.append(float(atom.IsInRingSize(5)))
++    features.append(float(atom.IsInRingSize(6)))
++    features.append(float(atom.IsInRingSize(7)))
++    features.append(float(atom.IsInRingSize(8)))
++    
++    # Hydrogen count
++    h_count = atom.GetTotalNumHs()
++    for h in range(5):  # 0-4
++        features.append(1.0 if h_count == h else 0.0)
++    features.append(1.0 if h_count > 4 else 0.0)
++    
++    # Chirality
++    features.append(float(atom.GetChiralTag() != Chem.rdchem.ChiralType.CHI_UNSPECIFIED))
++    
++    # Additional features
++    features.append(float(atom.GetMass() / 100.0))  # Normalized mass
++    features.append(float(atom.GetNumImplicitHs()))
++    features.append(float(atom.GetTotalValence()))
++    
++    return features

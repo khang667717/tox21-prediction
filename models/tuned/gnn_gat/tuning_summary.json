@@ -1,0 +1,16 @@
+{
+  "best_value": 0.40331702368421735,
+  "best_params": {
+    "hidden_dim": 216,
+    "num_layers": 4,
+    "dropout_rate": 0.1007452671264261,
+    "learning_rate": 0.000816616137374428,
+    "batch_size": 32,
+    "weight_decay": 0.0002448850903878357,
+    "pooling": "max"
+  },
+  "model_type": "gnn",
+  "n_trials": 10,
+  "trial_count": 10,
+  "gnn_subtype": "gat"
+}

@@ -1,0 +1,16 @@
+{
+  "best_value": 0.3872877351174002,
+  "best_params": {
+    "max_depth": 10,
+    "learning_rate": 0.03361682783163141,
+    "n_estimators": 246,
+    "subsample": 0.87200460572467,
+    "colsample_bytree": 0.8608318349113556,
+    "min_child_weight": 3,
+    "gamma": 1.5108709272868022,
+    "reg_alpha": 5.033456679691548,
+    "reg_lambda": 5.640430557643356
+  },
+  "model_type": "xgboost",
+  "trial_count": 45
+}
