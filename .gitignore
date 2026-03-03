@@ -1,6 +1,4 @@
-# ==================================================
-# 1️⃣ ENVIRONMENT
-# ==================================================
+# Virtual Environment
 tox21_env/
 .env
 .venv
@@ -8,87 +6,10 @@ env/
 venv/
 ENV/
 
-# ==================================================
-# 2️⃣ PYTHON CACHE / COMPILED
-# ==================================================
+# Python cache
 __pycache__/
 *.py[cod]
-*.so
-*.pyd
 
-# ==================================================
-# 3️⃣ LOGS
-# ==================================================
-*.log
-
-# ==================================================
-# 4️⃣ JUPYTER
-# ==================================================
-.ipynb_checkpoints/
-
-# ==================================================
-# 5️⃣ IDE / EDITOR
-# ==================================================
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# ==================================================
-# 6️⃣ OS FILES
-# ==================================================
+# OS files
 .DS_Store
 Thumbs.db
-
-# ==================================================
-# 7️⃣ BUILD / DIST
-# ==================================================
-dist/
-build/
-*.egg-info/
-*.egg
-MANIFEST
-
-# ==================================================
-# 8️⃣ RAW DATA (nếu không muốn upload toàn bộ dataset)
-# ==================================================
-data/raw/
-
-# ==================================================
-# 9️⃣ PROCESSED DATA
-# (Giữ manifest để reproducibility)
-# ==================================================
-data/processed/*.csv
-data/processed/*.npy
-data/processed/*.json
-!data/processed/tasks.json
-!data/processed/split_manifest.json
-
-# ==================================================
-# 🔟 MODELS
-# Ignore tất cả model nặng
-# ==================================================
-models/**/*.pt
-models/**/*.pth
-models/**/*.pkl
-models/**/*.joblib
-models/**/*.h5
-models/**/*.onnx
-
-# 👉 MỞ LẠI folder baseline
-!models/baseline/
-
-# 👉 Giữ toàn bộ 12 baseline models
-!models/baseline/*.joblib
-
-# ==================================================
-# 1️⃣1️⃣ RESULTS
-# Ignore ảnh và file lớn
-# ==================================================
-results/**/*.png
-results/**/*.jpg
-results/**/*.jpeg
-results/**/*.pdf
-
-calibration_results/**/*.png
