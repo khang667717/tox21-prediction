@@ -67,7 +67,9 @@ python FastAPI_fixed.py
 Access the interactive documentation at `http://localhost:8000/docs`.
 
 After that, run demo_predict_v2.py
+```bash
 python demo_predict_v2.py
+```
 (optional) use option 6 with threshold = 0.45 
 ### 3. Individual Components
 - **Preprocessing**: `python scripts/data_preprocess.py --input data/raw/tox21.csv`
@@ -92,4 +94,5 @@ Models are evaluated on:
 
 ## ⚖️ License
 This project is for educational and research purposes. Data is provided by the NIH NCATS Tox21 Challenge.
+
 
