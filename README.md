@@ -53,7 +53,11 @@ To run the entire workflow (preprocessing $\to$ training $\to$ evaluation $\to$ 
 ```bash
 chmod +x run_full_pipeline.sh
 ./run_full_pipeline.sh --tuning --tuning_trials=30
+./run_full_pipeline.sh --tuning --tuning_trials=20  --spark (dùng spark và tunning)
+./run_full_pipeline.sh --spark (khi không dùng tunning)
 ```
+next run Post Pipeline
+ ./run_post_pipeline.sh --all
 
 ### 2. Deploy the Prediction API
 Once a model is selected, start the FastAPI server:
@@ -62,6 +66,9 @@ python FastAPI_fixed.py
 ```
 Access the interactive documentation at `http://localhost:8000/docs`.
 
+After that, run demo_predict_v2.py
+python demo_predict_v2.py
+(optional) use option 6 with threshold = 0.45 
 ### 3. Individual Components
 - **Preprocessing**: `python scripts/data_preprocess.py --input data/raw/tox21.csv`
 - **GNN Training**: `python scripts/gnn_model.py --gnn_type gcn --use_edge_features`
@@ -85,3 +92,4 @@ Models are evaluated on:
 
 ## ⚖️ License
 This project is for educational and research purposes. Data is provided by the NIH NCATS Tox21 Challenge.
+
